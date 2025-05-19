@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json; charset=UTF-8');
 
-// Piadas locais
+// Piadas locais (array)
 $piadasLocais = [
     ['setup' => 'Por que o livro de matemática se suicidou?', 'delivery' => 'Porque tinha muitos problemas.'],
     ['setup' => 'O que é um vegetariano que come carne?', 'delivery' => 'Um ex-vegetariano.'],
@@ -11,7 +11,7 @@ $piadasLocais = [
     ['setup' => 'O que o zero disse para o oito?', 'delivery' => 'Que cinto bonito!']
 ];
 
-// 50% de usar API local Ou Api Publica
+// 50% de chance de usar API local Ou Api Pública
 $usarApi = rand(0, 1) === 1;
 
 if ($usarApi) {
