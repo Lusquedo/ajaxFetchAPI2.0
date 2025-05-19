@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Piadas</title>
+</head>
+<body>
+
+  <div id="piada">Clique no botão para gerar uma piada</div>
+
+  <button onclick="gerarPiada()">Gerar Piada</button>
+
+  <script>
+    function gerarPiada() {
+      
+      fetch('main.php')
+        .then(resposta => resposta.json()) 
+        .then(dados => {
+          let texto = dados.piada || (dados.setup + ' - ' + dados.delivery);
+          document.getElementById('piada').innerText = texto; 
+        })
+        .catch(() => {
+          document.getElementById('piada').innerText = 'Erro ao carregar a piada';
+        });
+    }
+  </script>
+
+</body>
+</html>
